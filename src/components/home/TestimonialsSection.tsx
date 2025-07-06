@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
 
 const testimonials = [
   {
@@ -16,7 +15,7 @@ const testimonials = [
     id: 2,
     name: 'Marcus Williams',
     title: 'Executive Director',
-    quote: 'I've been a loyal customer for years, and LuxeStore never disappoints. Their curated selection saves me time, and the premium quality ensures I always make a statement.',
+    quote: "I've been a loyal customer for years, and LuxeStore never disappoints. Their curated selection saves me time, and the premium quality ensures I always make a statement.",
     avatar: '/images/testimonials/avatar-2.jpg',
     rating: 5,
   },
@@ -24,7 +23,7 @@ const testimonials = [
     id: 3,
     name: 'Sophia Rodriguez',
     title: 'Interior Designer',
-    quote: 'The home collection at LuxeStore has been my secret weapon for client projects. Exceptional craftsmanship and unique designs that you simply can't find elsewhere.',
+    quote: "The home collection at LuxeStore has been my secret weapon for client projects. Exceptional craftsmanship and unique designs that you simply can't find elsewhere.",
     avatar: '/images/testimonials/avatar-3.jpg',
     rating: 4,
   },
@@ -40,7 +39,7 @@ const testimonials = [
     id: 5,
     name: 'Olivia Parker',
     title: 'Art Curator',
-    quote: 'Every piece I've purchased from LuxeStore feels like a work of art. Their commitment to quality and aesthetic excellence resonates with my professional standards.',
+    quote: "Every piece I've purchased from LuxeStore feels like a work of art. Their commitment to quality and aesthetic excellence resonates with my professional standards.",
     avatar: '/images/testimonials/avatar-5.jpg',
     rating: 5,
   },
@@ -49,7 +48,7 @@ const testimonials = [
 export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isAutoplay, setIsAutoplay] = useState(true)
-  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
+  const autoplayRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
