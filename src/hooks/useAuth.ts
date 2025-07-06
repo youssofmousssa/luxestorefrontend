@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, createContext, useContext } from 'react'
+import React, { useState, useEffect, createContext, useContext } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Session, User } from '@supabase/supabase-js'
 import useCart from './useCart'
@@ -180,7 +180,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     updateProfile,
   }
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  return React.createElement(AuthContext.Provider, { value }, children)
 }
 
 export function useAuth() {
